@@ -2,6 +2,7 @@ body{
   background-image:url(CSS\ Advanced/Object.png);
   background-repeat: no-repeat;
   background-size:contain;
+  margin: 0rem;
 }
 
 nav{
@@ -87,7 +88,7 @@ nav img{
   color: white;
   font-family: sourcesans;
   font-weight: lighter;
-  margin-top: 10rem;
+  margin-top: 8rem;
 }
 
 .thepros div{
@@ -113,3 +114,20 @@ nav img{
   margin-bottom: 0rem;
 }
 
+.quotes{
+  display: flex;
+  justify-content: center;
+  padding: 6rem;
+  margin: 0rem;
+  background-color: rgb(157, 65, 244);
+  color: white;
+  font-family: sourcesans;
+}
+
+.image{
+  margin-right: 5rem;
+}
+
+.quote blockquote{
+  margin: 0rem;
+}
