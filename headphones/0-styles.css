@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sourcesans, Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: sourcesans;
+  src: url(Fonts/SourceSansPro-Regular.otf);
+}
+
+header{
+  background-image: url(images/headphones_hero_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
