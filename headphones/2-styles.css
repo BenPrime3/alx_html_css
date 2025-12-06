@@ -100,6 +100,47 @@ header{
   padding-right: 2rem;
 }
 
+.ourResultsCont{
+  background-image: url(images/headphones_hero_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 10rem 2rem 6rem 2rem;
+  height: auto;
+}
+
+.resultDescription h1, .resultDescription p{
+  margin-bottom: 4rem;
+}
+
+.pentagon{
+  position: relative;
+}
+
+.pentagon div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.resText{
+  font-size: 1rem;
+}
+
+.resultDiv div{
+  margin-bottom: 5rem;
+}
+
+
 @media screen and (min-width: 600px){
   .doIcons{
     display: flex;
@@ -114,6 +155,24 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .resultDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 550px;
+    height: 580px;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .resultDiv div{
+    margin-bottom: 0rem;
+  }
+
+  .resultDescription{
+    padding: 0rem 5rem 0rem 5rem;
   }
 }
 
@@ -153,6 +212,10 @@ header{
     padding-left: 15rem;
     padding-right: 15rem;
   }
+
+  .resultDescription{
+    padding: 0rem 8rem 0rem 8rem;
+  }
 }
 
 @media screen and (min-width: 1150px) {
@@ -179,5 +242,15 @@ header{
   .weDo{
     padding-left: 15rem;
     padding-right: 15rem;
+  }
+
+  .resultDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 4rem;
+    height: 15rem;
+    width: 100%;
   }
 }
