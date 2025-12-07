@@ -27,13 +27,27 @@ header{
   width: 1.5rem;
   position: relative;
   bottom: 1.5rem;
+  transition: 1s;
 }
+
+/* .hamburgerMenu:hover > #topbar{
+  transform: translateY(0.44rem) rotate(-45deg);
+}
+
+.hamburgerMenu:hover > #bottombar{
+  transform: translateY(-0.44rem) rotate(45deg);
+}
+
+.hamburgerMenu:hover > .bar2{
+  display: none;
+} */
 
 .bar1{
   background-color: white;
-  width: 100%;
+  width: 1.5rem;
   height: 15%;
   border-radius: 0.05rem;
+  transition: 0.4s;
 }
 
 .bar2 {
@@ -41,12 +55,14 @@ header{
   width: 70%;
   height: 15%;
   border-radius: 0.05rem;
+  transition: 0.2s;
 }
 
 .logoContainer{
   display: flex;
   justify-content: center;
 }
+
 
 .infoSection{
   margin: 10rem 1rem 5rem 1rem;
@@ -63,7 +79,33 @@ header{
   border-radius: 2rem;
   font-weight: bold;
   box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.478);
+  animation: buttonflare 4s ease-out infinite forwards;
+  transition: 0.6s ease;
 }
+
+.infoSection button:hover {
+  animation: none;
+  background: rgb(255, 61, 94);
+  transform: scale(1.1);
+}
+
+.infoSection button:active{
+  transition: 0.1s ease-out;
+  transform: scale(0.95);
+}
+
+@keyframes buttonflare {
+  0%{
+    box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.478);
+  }
+  40%{
+    box-shadow: 0rem 0rem 2rem rgba(255, 255, 255, 0.622);
+  }
+  100%{
+    box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.478);
+  }
+}
+
 
 .navPanel{
   display: none;
@@ -86,9 +128,23 @@ header{
   width: 10rem;
 }
 
-.doIcons i{
+.doIcons div i{
+  display: inline-block;
   font-size: 8rem;
   color: rgb(255, 79, 109);
+  animation: pulse 3s ease-in-out infinite forwards;
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.15);
+  }
+  100%{
+    transform: scale(1);
+  }
 }
 
 .doSection div, .doSection div h1{
@@ -136,14 +192,17 @@ header{
   display: none;
 }
 
+
 .pentagon{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(248, 76, 104);
   height: 15rem;
   width: 15rem;
   font-size: 1.5rem;
+  margin-bottom: 5rem;
   clip-path: polygon(
     50% 0%,    
     100% 38%,  
@@ -151,14 +210,30 @@ header{
     18% 100%,
     0% 38% 
   );
+  animation: rotation 40s linear infinite forwards;
 }
 
 .resText{
   font-size: 1rem;
 }
 
+
+
 .resultDiv div{
-  margin-bottom: 5rem;
+  position: relative;
+}
+
+.resultDiv div div span{
+  animation: rotation 40s linear reverse infinite forwards;
+}
+
+@keyframes rotation {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
 
 .form{
@@ -227,6 +302,29 @@ input{
   border-radius: 2rem;
   font-weight: bold;
   box-shadow: 0rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.097);
+  animation: bounce 3s ease-in infinite;
+  transition: 0.6s;
+}
+
+.formbutton input:hover {
+  animation: none;
+  background: rgb(255, 61, 94);
+  transform: scale(1.1);
+}
+
+.formbutton input:active {
+  animation: none;
+  transition: 0.2s ease-out;
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0%, 100%{
+    transform: translateY(0);
+  }
+  30%{
+    transform: translateY(-0.4rem);
+  }
 }
 
 .formbutton{
@@ -296,6 +394,10 @@ footer p{
   .resultDescription{
     padding: 0rem 5rem 0rem 5rem;
   }
+
+  .pentagon{
+    padding-top: 0rem;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -320,6 +422,70 @@ footer p{
     flex-direction: row;
     list-style-type: none;
     gap: 2rem;
+  }
+
+  .navPanel nav li, .pages{
+    transition: 0.5s;
+  }
+
+  .navPanel nav div:hover{
+    cursor: pointer;
+    color: rgb(255, 173, 186);
+    text-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.255);
+  }
+
+
+  nav :nth-child(1){
+    opacity: 0;
+    animation: FadeInandRise 0.8s ease-out 1s forwards;
+  }
+
+  nav :nth-child(2){
+    opacity: 0;
+    animation: FadeInandRise 1.2s ease-out 1s forwards;
+  }
+
+  nav :nth-child(3){
+    opacity: 0;
+    animation: FadeInandRise 1.6s ease-out 1s forwards;
+  }
+
+  @keyframes FadeInandRise {
+    0%{
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    /* 50%{
+      opacity: 0.2;
+    } */
+    100%{
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+  }
+
+  .logoContainer{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slide 1.5s ease-out forwards;
+  }
+
+  @keyframes slide {
+    0%{
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    30%{
+      position: relative;
+      left: 12%;
+      transform: translateX(-50%);
+    }
+    100%{
+      position: relative;
+      left: 0rem;
+    }
   }
 
   .infoSection {
