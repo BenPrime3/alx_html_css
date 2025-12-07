@@ -453,11 +453,16 @@ footer p{
   .navPanel {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0rem;
   }
 
-  .navPanel nav {
+  .navPanel #nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     list-style-type: none;
     gap: 2rem;
   }
