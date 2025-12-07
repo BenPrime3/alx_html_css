@@ -1,0 +1,596 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sourcesans;
+}
+
+@font-face {
+  font-family: sourcesans;
+  src: url(Fonts/SourceSansPro-Regular.otf);
+}
+
+header{
+  background-image: url(images/headphones_hero_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 1rem;
+  padding-top: 2rem;
+  color: white;
+}
+
+.hamburgerMenu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1rem;
+  width: 1.5rem;
+  position: relative;
+  bottom: 1.5rem;
+  transition: 1s;
+}
+
+.hamburgerMenu.active .top{
+  transform: translateY(0.44rem) rotate(-45deg);
+}
+
+.hamburgerMenu.active .bottom{
+  transform: translateY(-0.44rem) rotate(45deg);
+}
+
+.hamburgerMenu.active .middle{
+  opacity: 0;
+  transform: translateX(25%);
+}
+
+.navPanel.show{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  pointer-events: auto;
+  text-align: center;
+}
+
+.navPanel.show #nav{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.navPanel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  pointer-events: none;
+  text-align: center;
+}
+
+.navPanel.show #nav div li{
+  list-style-type: none;
+  opacity: 1;
+}
+
+.navPanel #nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.navPanel #nav div li {
+  opacity: 0;
+  list-style-type: none;
+  transition: 1s ease;
+}
+
+.bar1{
+  background-color: white;
+  width: 1.5rem;
+  height: 15%;
+  border-radius: 0.05rem;
+  transition: 0.4s;
+}
+
+.bar2 {
+  background-color: white;
+  width: 70%;
+  height: 15%;
+  border-radius: 0.05rem;
+  transition: 0.2s;
+}
+
+.logoContainer{
+  display: flex;
+  justify-content: center;
+}
+
+
+.infoSection{
+  margin: 10rem 1rem 5rem 1rem;
+  text-align: center;
+}
+
+.infoSection button{
+  margin: 1rem;
+  margin-bottom: 2rem;
+  background: rgb(255, 79, 109);
+  border: none;
+  color:white;
+  padding:0.8rem 2rem 0.8rem 2rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.478);
+  animation: buttonflare 4s ease-out infinite forwards;
+  transition: 0.6s ease;
+}
+
+.infoSection button:hover {
+  animation: none;
+  background: rgb(255, 61, 94);
+  transform: scale(1.1);
+}
+
+.infoSection button:active{
+  transition: 0.1s ease-out;
+  transform: scale(0.95);
+}
+
+@keyframes buttonflare {
+  0%{
+    box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.478);
+  }
+  40%{
+    box-shadow: 0rem 0rem 2rem rgba(255, 255, 255, 0.622);
+  }
+  100%{
+    box-shadow: 0.2rem 0.2rem 2rem rgba(0, 0, 0, 0.478);
+  }
+}
+
+
+
+.doSection{
+  margin: 5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+
+.doIcons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.doIcons div {
+  width: 10rem;
+}
+
+.doIcons div i{
+  display: inline-block;
+  font-size: 8rem;
+  color: rgb(255, 79, 109);
+  animation: pulse 3s ease-in-out infinite forwards;
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.15);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.doSection div, .doSection div h1{
+  margin-bottom: 2rem;
+}
+
+.weDo {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.ourResultsCont{
+  background-image: url(images/headphones_hero_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 10rem 2rem 6rem 2rem;
+  height: auto;
+}
+
+.resultDescription h1, .resultDescription p{
+  margin-bottom: 4rem;
+}
+
+/* .pentagon{
+  position: relative;
+}
+
+.pentagon div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  width: 100%;
+} */
+
+.pentagon img{
+  display: none;
+}
+
+
+.pentagon{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248, 76, 104);
+  height: 15rem;
+  width: 15rem;
+  font-size: 1.5rem;
+  margin-bottom: 5rem;
+  clip-path: polygon(
+    50% 0%,    
+    100% 38%,  
+    82% 100%,  
+    18% 100%,
+    0% 38% 
+  );
+  animation: rotation 40s linear infinite forwards;
+}
+
+.resText{
+  font-size: 1rem;
+}
+
+
+
+.resultDiv div{
+  position: relative;
+}
+
+.resultDiv div div span{
+  animation: rotation 40s linear reverse infinite forwards;
+}
+
+@keyframes rotation {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2rem;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+form div h1{
+  margin-bottom: 3rem;
+}
+
+.inputField, form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.inputField{
+  padding: 0rem 2rem 0rem 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.inputBar{
+  display: flex;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+  width: 100%;
+  height: 100%;
+}
+
+
+.label{
+  text-align: left;
+  width: 35%;
+}
+
+.input{
+  width: 65%;
+  text-align: left;
+}
+
+input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.formbutton input{
+  background: rgb(255, 79, 109);
+  border: none;
+  color:white;
+  padding:0.8rem 2rem 0.8rem 2rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  box-shadow: 0rem 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.097);
+  animation: bounce 3s ease-in infinite;
+  transition: 0.5s ease;
+}
+
+.formbutton input:hover {
+  animation: none;
+  background: rgb(255, 61, 94);
+  transform: scale(1.1);
+}
+
+.formbutton input:active {
+  animation: none;
+  transition: 0.2s ease-out;
+  transform: scale(0.95);
+}
+
+@keyframes bounce {
+  0%, 100%{
+    transform: translateY(0);
+  }
+  30%{
+    transform: translateY(-0.4rem);
+  }
+}
+
+.formbutton{
+  margin-top: 5rem;
+}
+
+footer{
+  background-color: rgb(1, 1, 31);
+  padding: 10rem;
+  padding-bottom: 3rem;
+  margin-top: 5rem;
+  color: white;
+}
+
+footer div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 20rem;
+}
+
+.footerIcons{
+  gap: 1rem;
+  font-size: 2.5rem;
+}
+
+footer p{
+  text-align: center;
+  margin-top: 5rem;
+  color: rgba(255, 255, 255, 0.234);
+}
+
+
+@media screen and (min-width: 600px){
+  .doIcons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:500px;
+    justify-content: center;
+    gap: 10rem;
+  }
+
+  .doSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .resultDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 550px;
+    height: 580px;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .resultDiv div{
+    margin-bottom: 0rem;
+  }
+
+  .resultDescription{
+    padding: 0rem 5rem 0rem 5rem;
+  }
+
+  .pentagon{
+    padding-top: 0rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 12rem 0rem 12rem;
+  }
+
+  .hamburgerMenu {
+    display: none;
+  }
+
+  .navPanel {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navPanel nav {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 2rem;
+  }
+
+  .navPanel nav li, .pages{
+    transition: 0.5s;
+  }
+
+  .navPanel nav div:hover{
+    cursor: pointer;
+    color: rgb(255, 173, 186);
+    text-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.255);
+  }
+
+
+  nav :nth-child(1){
+    opacity: 0;
+    animation: FadeInandRise 0.8s ease-out 1s forwards;
+  }
+
+  nav :nth-child(2){
+    opacity: 0;
+    animation: FadeInandRise 1.2s ease-out 1s forwards;
+  }
+
+  nav :nth-child(3){
+    opacity: 0;
+    animation: FadeInandRise 1.6s ease-out 1s forwards;
+  }
+
+  @keyframes FadeInandRise {
+    0%{
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+    /* 50%{
+      opacity: 0.2;
+    } */
+    100%{
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+  }
+
+  .logoContainer{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slide 1.5s ease-out forwards;
+  }
+
+  @keyframes slide {
+    0%{
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    30%{
+      position: relative;
+      left: 12%;
+      transform: translateX(-50%);
+    }
+    100%{
+      position: relative;
+      left: 0rem;
+    }
+  }
+
+  .infoSection {
+    padding: 10rem 10rem 10rem 10rem;
+  }
+
+  #p1 {
+    padding: 3rem 0rem 0rem 0rem;
+  }
+
+  .weDo{
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+
+  .resultDescription{
+    padding: 0rem 8rem 0rem 8rem;
+  }
+
+  footer div{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footerIcons{
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .infoSection {
+    padding: 10rem 18rem 10rem 18rem;
+  }
+
+  .doIcons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    gap: 5rem;
+  }
+
+  .doSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weDo{
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+
+  .resultDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 4rem;
+    height: 15rem;
+    width: 100%;
+  }
+}
